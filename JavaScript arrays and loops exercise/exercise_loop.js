@@ -50,7 +50,7 @@ console.log(addNumber(arrayMain, number));
 function addArrays(array1, array2) {
   let result = [];
 
-  for(let i = 0; i < array1.length; i++){
+  for (let i = 0; i < array1.length; i++) {
     result.push(array1[i] + array2[i]);
   }
 
@@ -58,17 +58,37 @@ function addArrays(array1, array2) {
 }
 console.log(addArrays([5, 1, 3], [1, 8, 3]));
 
-
 function greaterThan(nums) {
   let result = 0;
-  for(let i = 0; i < nums.length; i++){
-    if(nums[i] > 0){
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] > 0) {
       result += 1;
     }
   }
   return result;
 }
 
-
 console.log(greaterThan([5, -1, 3]));
 console.log(greaterThan([-2, -1, 9]));
+
+function minMax(array) {
+  const result = {
+    min: array[0],
+    max: array[0]
+  };
+
+  for (let i = 0; i < array.length; i++) {
+    const lastValue = array[i];
+
+    if (lastValue < result.min) {
+      result.min = lastValue;
+    }
+    if (lastValue > result.max) {
+      result.max = lastValue;
+    }
+  }
+
+  return result;
+}
+
+console.log(minMax([1, -3, 5]));
